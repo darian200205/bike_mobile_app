@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">myapp</string>
+    <string name="add_to_inventory">Add to inventory</string>
+    <string name="hello_user">Hello, user</string>
+</resources>
