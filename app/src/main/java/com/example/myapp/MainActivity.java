@@ -1,9 +1,5 @@
 package com.example.myapp;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,6 +10,10 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         if(fAuth.getCurrentUser() != null){
-            startActivity(new Intent(getApplicationContext(), Logged.class));
+            startActivity(new Intent(getApplicationContext(), AllUsers.class));
             finish();
         }
 
@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
                             Toast.makeText(MainActivity.this, "Logged in as " + email , Toast.LENGTH_LONG).show();
-                            Intent i = new Intent(MainActivity.this , Logged.class);
+                            Intent i = new Intent(MainActivity.this , AllUsers.class);
                             i.putExtra("userEmail", email);
                             startActivity(i);
                         }

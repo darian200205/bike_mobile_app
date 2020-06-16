@@ -11,9 +11,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".yourProfile"
-            android:parentActivityName=".Logged"></activity>
-        <activity android:name=".Logged" />
+        <activity android:name=".AllUsers"
+
+           ></activity>
+        <activity
+            android:name=".EditProfile"
+            android:parentActivityName=".yourProfile" />
+        <activity
+            android:name=".yourProfile"
+             android:parentActivityName=".AllUsers"/>
         <activity
             android:name=".CartActivity"
             android:label="Register"

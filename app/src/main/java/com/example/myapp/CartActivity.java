@@ -1,10 +1,6 @@
 package com.example.myapp;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
-import android.nfc.Tag;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -14,6 +10,9 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -88,7 +87,7 @@ public class CartActivity extends AppCompatActivity {
                         if(task.isSuccessful()){
                             Toast.makeText(CartActivity.this, "Account created for " + email, Toast.LENGTH_LONG).show();
                             userId = fAuth.getCurrentUser().getUid();
-                            Intent i = new Intent(getApplicationContext(), Logged.class);
+                            Intent i = new Intent(getApplicationContext(), AllUsers.class);
                             DocumentReference documentReference = fStore.collection("users").document(userId);
                             Map<String,Object> user = new HashMap<>();
                             user.put("fName", fullName);
@@ -109,7 +108,7 @@ public class CartActivity extends AppCompatActivity {
                             startActivity(i);
                         } else {
                                 Toast.makeText(CartActivity.this, "Error - " + task.getException().getMessage(),Toast.LENGTH_LONG ).show();
-
+                                progressBar.setVisibility(View.INVISIBLE);
                         }
                     }
                 });

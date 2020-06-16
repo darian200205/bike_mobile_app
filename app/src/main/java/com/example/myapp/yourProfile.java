@@ -1,13 +1,8 @@
 package com.example.myapp;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -17,6 +12,10 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -29,12 +28,9 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
-
-import javax.annotation.Nullable;
-
 import com.squareup.picasso.Picasso;
 
-import io.grpc.Context;
+import javax.annotation.Nullable;
 
 public class yourProfile extends AppCompatActivity {
 
@@ -43,9 +39,10 @@ public class yourProfile extends AppCompatActivity {
     FirebaseFirestore fStore;
     String userId;
     ImageView profileImage;
-    Button changeProfileImage, forgotTextLink;
+    Button changeProfileImage, forgotTextLink, changeProfile;
     int maxWidth = 100;
     StorageReference storageReference;
+
 
 
 
@@ -58,10 +55,12 @@ public class yourProfile extends AppCompatActivity {
         email = findViewById(R.id.myEmail);
         fullName = findViewById(R.id.myName);
         forgotTextLink = findViewById(R.id.forgotTextLink);
+        changeProfile = findViewById(R.id.changePic2);
 
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
         storageReference = FirebaseStorage.getInstance().getReference();
+
 
         final StorageReference profileRef = storageReference.child("users/" + fAuth.getCurrentUser().getUid() + "/profile.jpg");
         profileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
@@ -92,6 +91,14 @@ public class yourProfile extends AppCompatActivity {
                 // pornesc gallery
                 Intent openGallery = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                 startActivityForResult(openGallery, 1000);
+
+            }
+        });
+        changeProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(v.getContext(), EditProfile.class);
+                startActivity(i);
             }
         });
 
@@ -166,8 +173,11 @@ public class yourProfile extends AppCompatActivity {
         });
     }
 
-    public void previous (View v){
-        Intent i = new Intent(getApplicationContext(), Logged.class);
-        startActivity(i);
+    public void signOut(View v){
+        FirebaseAuth.getInstance().signOut();
+        startActivity( new Intent(getApplicationContext(), MainActivity.class));
+        finish();
     }
+
+
 }

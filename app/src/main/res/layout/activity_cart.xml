@@ -8,17 +8,11 @@
     android:backgroundTint="#FFFFFF"
     tools:context=".CartActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".CartActivity"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="-35dp">
 
         <TextView
             android:id="@+id/hello4"
-            android:layout_width="250dp"
-            android:layout_height="30dp"
+            android:layout_width="300dp"
+            android:layout_height="29dp"
             android:layout_marginTop="4dp"
             android:fontFamily="sans-serif-condensed-medium"
             android:text="ALREADY HAVE AN ACCOUNT?"
@@ -29,7 +23,7 @@
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintHorizontal_bias="0.655"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/registerButton" />
 
@@ -38,7 +32,7 @@
             style="@android:style/Widget.Material.Light.Button.Toggle"
             android:layout_width="215dp"
             android:layout_height="66dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="10dp"
             android:background="#76FF03"
             android:paddingBottom="10px"
             android:text="REGISTER"
@@ -53,7 +47,7 @@
             style="@android:style/Widget.Material.Light.Button.Toggle"
             android:layout_width="99dp"
             android:layout_height="53dp"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="8dp"
             android:background="#76FF03"
             android:onClick="goBack"
             android:paddingBottom="10px"
@@ -65,30 +59,28 @@
 
         <EditText
             android:id="@+id/Email"
-            android:layout_width="354dp"
-            android:layout_height="73dp"
-            android:layout_marginTop="4dp"
+            android:layout_width="287dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="12dp"
             android:ems="10"
             android:fontFamily="@font/alfa_slab_one1"
             android:hint="Enter your email"
             android:inputType="textEmailAddress"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.546"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/hello2" />
+            app:layout_constraintTop_toBottomOf="@+id/hello3" />
 
         <EditText
             android:id="@+id/Password"
-            android:layout_width="358dp"
-            android:layout_height="66dp"
+            android:layout_width="287dp"
+            android:layout_height="52dp"
             android:layout_marginTop="8dp"
             android:ems="10"
             android:fontFamily="@font/alfa_slab_one1"
             android:hint="Enter your passsword"
             android:inputType="textPassword"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.573"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/Email" />
 
@@ -96,6 +88,7 @@
             android:id="@+id/hello"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="52dp"
             android:fontFamily="@font/alfa_slab_one1"
             android:text="JOIN"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
@@ -105,15 +98,16 @@
             android:textSize="30sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.519"
+            app:layout_constraintHorizontal_bias="0.477"
             app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="110dp" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/hello2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:layout_marginEnd="50dp"
             android:fontFamily="@font/alfa_slab_one1"
             android:text="Your"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
@@ -123,7 +117,7 @@
             android:textSize="30sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.403"
+            app:layout_constraintHorizontal_bias="0.408"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/hello" />
 
@@ -131,8 +125,8 @@
             android:id="@+id/hello3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="116dp"
             android:fontFamily="@font/alfa_slab_one1"
             android:text="Bike"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
@@ -141,34 +135,34 @@
             android:textColorLink="#FFFFFF"
             android:textSize="30sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/hello2"
             app:layout_constraintTop_toBottomOf="@+id/hello" />
 
         <EditText
             android:id="@+id/editTextPhone"
-            android:layout_width="372dp"
-            android:layout_height="62dp"
-            android:layout_marginTop="12dp"
+            android:layout_width="292dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
             android:ems="10"
             android:fontFamily="@font/alfa_slab_one1"
             android:hint="Enter your phone number"
             android:inputType="phone"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.761"
+            app:layout_constraintHorizontal_bias="0.524"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/FullName" />
 
         <EditText
             android:id="@+id/FullName"
-            android:layout_width="361dp"
-            android:layout_height="62dp"
+            android:layout_width="290dp"
+            android:layout_height="50dp"
             android:layout_marginTop="8dp"
             android:ems="10"
             android:fontFamily="@font/alfa_slab_one1"
             android:hint="Enter your name"
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.531"
+            app:layout_constraintHorizontal_bias="0.485"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/Password" />
 
@@ -183,5 +177,4 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
